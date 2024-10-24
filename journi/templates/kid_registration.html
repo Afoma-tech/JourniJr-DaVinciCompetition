@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'kid_reg.css' %}">
+</head>
+<body>
+    <div class="reg-container">
+        <div class="reg-header">
+            <h3>Welcome to Journi Jr.</h3>
+            <p>Register your child to get them the best healthcare during family trips</p>
+        </div>
+        <form action = "{% url 'kid_registration' %}" method="POST" enctype="multipart/form-data" class="kid-signup">
+            {% csrf_token %}
+            <!--Child Personal Information-->
+            <h4>Child Personal Information</h4>
+            <div class="reg">
+                <p>Government First Name</p>
+                <input type="text" name="first_name" id="c_first_name" placeholder="Enter your child's legal first name">
+            </div>
+            <div class="reg">
+                <p>Government Last Name</p>
+                <input type="text" name="last_name" id="c_last_name" placeholder="Enter your child's legal last name">
+            </div>
+            <div class="reg">
+                <p>Date of Birth</p>
+                <input type="date" name="birthday" id="c_birthday" placeholder="Enter your child's date of birth">
+            </div>
+            <div class="reg">
+                <p>Sex</p>
+                {{ form.sex }}
+            </div>
+            <div class="reg">
+                <p>Street Address</p>
+                <input type="text" name="street_address" id="c_street_address" placeholder="Enter your child's street address" required>
+            </div>
+            <div class="reg">
+                <p>City</p>
+                <input type="text" name="city" id="c_city" placeholder="Enter your child's city" required>
+            </div>
+            <div class="reg">
+                <p>State</p>
+                <input type="text" name="state" id="c_state" placeholder="Enter your child's state" required>
+            </div>
+            <div class="reg">
+                <p>Zip Code</p>
+                <input type="text" name="zip_code" id="c_zip_code" placeholder="Enter your child's zip code" required>
+            </div>
+            <div class="reg">
+                <p>Country</p>
+                {{ form.country }}
+            </div>
+            <!-- Guardian Information-->
+            <h4>Guardian Personal Information</h4>
+            <p>Note: The Guardian will also be registered as their emergency contact</p>
+            <div class="reg">
+                <p>Guardian's Full Name</p>
+                <input type="text" name="full_name" id="g_full_name" placeholder="Enter the name of their legal guardian">
+            </div>
+            <div class="reg">
+                <p>Guardian's email address</p>
+                <input type="text" name="email_address" id="g_email_address" placeholder="Enter their legal guardian's email address">
+            </div>
+            <div class="reg">
+                <p>Guardian's Phone number</p>
+                <input type="text" name="phone_number" id="g_phone_number" placeholder="Enter their legal guardian's phone number">
+            </div>
+            <!--Insurance Information-->
+            <h4>Insurance Information</h4>
+            <div class="reg">
+                <p>Insurance Provider</p>
+                <input type="text" name="insurance_provider" id="insurance_provider" placeholder="Enter the insurance provider's name">
+            </div>
+            <div class="reg">
+                <p>Insurance Policy Number</p>
+                <input type="text" name="insurance_policy_number" id="insurance_policy_number" placeholder="Enter the insurance policy number">
+            </div>
+            <div class="reg">
+                <p>Insurance Group Number (if applicable)</p>
+                <input type="text" name="insurance_group_number" id="insurance_group_number" placeholder="Enter the insurance group number">
+            </div>
+            <!--Medical Information-->
+            <h4>Medical Information</h4>
+            <div class="reg">
+                <p>Primary Care Doctor</p>
+                <input type="text" name="primary_care_doctor" id="primary_care_doctor" placeholder="Enter the primary care doctor's name">
+            </div>
+            <div class="reg">
+                <p>Doctor's Phone Number</p>
+                <input type="text" name="doctor_phone_number" id="doctor_phone_number" placeholder="Enter the doctor's phone number">
+            </div>
+            <div class="reg">
+                <p>Current Medication</p>
+                <input type="text" name="current_medication" id="current_medication" placeholder="Enter current medication">
+            </div>
+            <div class="reg">
+                <p>Allergies (click none if not applicable)</p>
+                {{ form.allergy }}
+            </div>
+            <div class="reg">
+                <p>Medical Conditions (click none if not applicable)</p>
+                {{ form.medical_conditions }}
+            </div>
+            <div class="reg">
+                <p>Family Medical History (click none if not applicable)</p>
+                {{ form.family_medical_history }}
+            </div>
+            <div class="reg">
+                <p>Guardian Identification Type</p>
+                {{ form.guardian_identification_type }}
+            </div>
+            <div class="reg">
+                <p>Child Identification Type</p>
+                {{ form.child_identification_type }}
+            </div>
+            <div class="reg">
+                <p>Guardian Identification Document (Images or PDFs)</p>
+                <input type="file" name="guardian_identification_document" id="guardian_id_document" accept="image/*,.pdf">
+            </div>
+        
+            <div class="reg">
+                <p>Child Identification Document (Images or PDFs)</p>
+                <input type="file" name="child_identification_document" id="child_id_document" accept="image/*,.pdf">
+            </div>
+        
+            <div class="form-buttons">
+                <button type="reset" class="register-another">Register Another Child</button>
+                <a href="{% url 'review_page_name' %}" class="review-inputs">Review Inputs</a>
+            </div>
+            
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+
+
+</body>
+</html>

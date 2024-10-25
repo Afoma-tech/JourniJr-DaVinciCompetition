@@ -6,23 +6,23 @@
     <title>Journi Jr.</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'IBM Plex Mono', monospace;
-            background-color: #FFFAF1; /* Updated background color */
-            color: #5A2E65; /* Text color */
+            font-family: 'Mulish', sans-serif;
+            background-color: #FFFAF1;
+            color: #5A2E65;
             margin: 0;
             padding: 0;
+            font-size: 14px;
         }
 
         /* Header */
         header {
-            background-color: #f0f9ff; /* Light header */
+            background-color: #f0f9ff;
             padding: 20px 0;
-            color: #5A2E65; /* Pastel blue text */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #5A2E65;
         }
 
         header .container {
@@ -47,14 +47,10 @@
             color: #5A2E65;
             text-decoration: none;
             font-weight: 500;
-            padding: 10px 20px;
-            border-radius: 25px; /* Rounded buttons */
-            transition: background-color 0.3s, color 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #90B7F8;
-            color: #fff; /* Change text color on hover */
+            color: #3b2c4a;
         }
 
         /* Sections */
@@ -65,61 +61,58 @@
 
         section {
             padding: 40px 0;
-            text-align: left; /* Align text to the left for sections */
+            text-align: center;
         }
 
-        h2, h3 {
-            color: #90B7F8; /* Updated heading color */
-            margin-bottom: 20px; /* Space below headings */
+        h1, h2, h3 {
+            color: #90B7F8;
         }
 
         h4 {
-            color: #000000; /* Updated subheading color */
+            color: #000000;
         }
 
         /* Key Features */
         #features {
-            padding: 40px 0;
+            display: flex;
+            padding: 40px;
         }
 
-        .features-text {
+        .features-content {
             display: flex;
-            flex-direction: column; /* Stack sections vertically */
+            align-items: stretch;
+            width: 100%;
         }
 
         .feature-card {
-            background-color: white;
+            background: #ffffff;
             border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 10px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            margin: 10px;
+            flex: 1;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .features-text {
+            text-align: left;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         /* FAQs */
         #faqs {
-            text-align: left; /* Align text to the left for better readability */
+            text-align: left;
         }
 
         .faq {
-            margin: 20px 0; /* Space between FAQs */
-        }
-
-        .faq-card {
-            background-color: #f0f9ff;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
-        }
-
-        .faq-card:hover {
-            background-color: #e0e0e0; /* Change color on hover */
+            margin: 20px 0;
         }
 
         .faq-question {
@@ -131,13 +124,47 @@
         }
 
         .faq-question:hover {
-            color: #3b2c4a; /* Darker shade on hover */
+            color: #3b2c4a;
         }
 
         .faq-answer {
-            display: none; /* Initially hidden */
+            display: none;
             padding: 10px 0;
             color: #333;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f0f9ff;
+            padding: 40px 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-button {
+            padding: 10px 20px;
+            background-color: #90B7F8;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #3b2c4a;
         }
 
         /* Footer */
@@ -157,8 +184,9 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#features">Features</a></li>
                     <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#login">Log In</a></li>
                     <li><a href="#signup">Sign Up</a></li>
                 </ul>
@@ -168,59 +196,65 @@
 
     <section id="intro" class="container">
         <h2>Welcome to Journi Jr.</h2>
-        <p>Your Companion for Family Health and Wellness on the Go</p>
+        <p>Journi Jr. is your ultimate travel companion designed specifically for families on the go. Our mission is to make family travel safer and more enjoyable. With features like personalized packing lists, dining options for kids, and a healthcare locator, we empower families to navigate their journeys effortlessly.</p>
     </section>
 
     <section id="about" class="container">
         <h3>What is Journi Jr.?</h3>
-        <p>Journi Jr. is a mobile app designed to help families navigate healthcare challenges while traveling.</p>
-        <h3>Mission</h3>
-        <p>To empower families by providing accessible, reliable health information and services.</p>
-        <h3>Vision</h3>
-        <p>To be the leading mobile health companion for traveling families.</p>
+        <p>At Journi Jr., we understand that traveling with family can be both exciting and challenging. Recent statistics reveal that <strong>73% of families believe travel strengthens their bonds</strong> (Family Travel Association). That's why we created this app to support families on their journeys. With our Packing Assistant, you’ll receive personalized packing lists to ensure you never forget essential items.</p>
+        <p>Our app also features dining options that cater to kids' healthy eating needs, helping you find family-friendly restaurants wherever you go. Plus, our Health Care Locator allows you to quickly find nearby healthcare facilities and pediatric specialists in case of emergencies. With <strong>87% of families planning their trips in advance</strong> (American Express Travel), Journi Jr. equips you with the tools you need to prepare for any situation, allowing you to travel confidently and create lasting memories.</p>
     </section>
 
     <section id="features" class="container">
-        <h3>Key Features:</h3>
-        <div class="features-text">
+        <h3>Key Features</h3>
+        <div class="features-content">
             <div class="feature-card">
-                <h4>Emergency Health Locator</h4>
-                <p>Easily locate nearby pediatric specialists or emergency health services.</p>
+                <h4 class="feature-title">Packing Assistant</h4>
+                <p>Get personalized packing lists tailored to your family's needs, ensuring you never forget essential items.</p>
             </div>
             <div class="feature-card">
-                <h4>Travel Kits & Tips</h4>
-                <p>Personalized travel health guides for your little ones.</p>
+                <h4 class="feature-title">Dining Options</h4>
+                <p>Discover family-friendly dining options near your location, including restaurants with healthy menus for kids.</p>
+            </div>
+            <div class="feature-card">
+                <h4 class="feature-title">Health Care Locator</h4>
+                <p>Quickly find nearby healthcare facilities and pediatric specialists in case of emergencies.</p>
             </div>
         </div>
     </section>
 
-    <section id="faqs" class="faqs container">
+    <section id="faqs" class="container">
         <h3>FAQs</h3>
         <div class="faq">
-            <div class="faq-card">
-                <div class="faq-question">Are the health alerts up-to-date?</div>
-                <div class="faq-answer">Yes, our health alerts are regularly updated to ensure the latest information on local diseases, outbreaks, or health advisories is available.</div>
-            </div>
-            <div class="faq-card">
-                <div class="faq-question">Is the app free to use?</div>
-                <div class="faq-answer">The basic version of the app is free to use, which includes access to core features such as the emergency health locator and health alerts.</div>
-            </div>
-            <div class="faq-card">
-                <div class="faq-question">How do I contact support if I have questions?</div>
-                <div class="faq-answer">You can contact our support team through multiple channels inside the app or via email.</div>
-            </div>
-            <div class="faq-card">
-                <div class="faq-question">Can I access the app offline?</div>
-                <div class="faq-answer">While some features require an internet connection, you can access certain features offline.</div>
-            </div>
-            <div class="faq-card">
-                <div class="faq-question">How do I update my profile information?</div>
-                <div class="faq-answer">Navigate to the Profile section within the app to edit your details.</div>
-            </div>
+            <div class="faq-question">Are the health alerts up-to-date?</div>
+            <div class="faq-answer">Yes, our health alerts are regularly updated to ensure the latest information on local diseases, outbreaks, or health advisories is available.</div>
+
+            <div class="faq-question">Is the app free to use?</div>
+            <div class="faq-answer">The basic version of the app is free to use, which includes access to core features such as the emergency health locator and health alerts.</div>
+
+            <div class="faq-question">How do I contact support if I have questions?</div>
+            <div class="faq-answer">You can contact our support team through multiple channels inside the app or via email.</div>
+
+            <div class="faq-question">Can I access the app offline?</div>
+            <div class="faq-answer">While some features require an internet connection, you can access certain features offline.</div>
+
+            <div class="faq-question">How do I update my profile information?</div>
+            <div class="faq-answer">Navigate to the Profile section within the app to edit your details.</div>
         </div>
     </section>
 
-    <section id="our-story" class="our-story container">
+    <section id="contact" class="container">
+        <h3>Contact Us</h3>
+        <p>If you have any questions or need support, feel free to reach out to us!</p>
+        <div class="contact-form">
+            <input type="text" class="contact-input" placeholder="Your Name" required>
+            <input type="email" class="contact-input" placeholder="Your Email" required>
+            <textarea class="contact-input" placeholder="Your Message" rows="4" required></textarea>
+            <button class="contact-button">Send Message</button>
+        </div>
+    </section>
+
+    <section id="our-story" class="container">
         <h3>Our Story</h3>
         <p>At Journi Jr., our journey began during the Da Vinci Competition, where we recognized the urgent need for a reliable travel companion designed specifically for families.</p>
     </section>

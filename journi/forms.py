@@ -9,7 +9,7 @@ class kidregform(forms.ModelForm):
         ('Female', 'Female'),
     ]
     
-    sex = forms.RadioSelect(
+    sex = forms.ChoiceField(
         choices=SEX_CHOICES,
         widget=forms.RadioSelect 
      )
@@ -33,7 +33,7 @@ class kidregform(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple
     )
 
-    FAMILY_MEDICAL_HISTORY_CHOICES = [
+    MEDICAL_CONDITIONS_CHOICES = [
         ('none', 'None'),
         ('asthma', 'Asthma'),
         ('diabetes', 'Diabetes'),

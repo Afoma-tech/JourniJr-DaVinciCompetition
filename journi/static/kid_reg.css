@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #F0F4F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .reg-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .reg-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .reg-header h3 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .reg-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  form.kid-signup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Form section titles */
+  form.kid-signup h4 {
+    grid-column: 1 / 3;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .reg {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reg p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .reg input, .reg select, .reg textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    /* box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .reg input[type="file"] {
+    padding: 10px;
+  }
+  
+  .reg select, .reg textarea {
+    background-color: #fff;
+  }
+  
+  .reg input[type="date"] {
+    color: #777;
+  }
+  
+  .form-buttons {
+    grid-column: 1 / 3;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #7e5a63;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #6d4d55;
+  }
+  
+  /* For multi-selects like allergy, medical conditions, and family medical history */
+  .multi-select {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .multi-select label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .multi-select input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    form.kid-signup {
+      grid-template-columns: 1fr;
+    }
+  }
+  

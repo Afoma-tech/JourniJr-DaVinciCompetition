@@ -14,7 +14,7 @@
             <h3>Welcome to Journi Jr.</h3>
             <p>Register your child to get them the best healthcare during family trips</p>
         </div>
-        <form action = "{% url 'kid_registration' %}" method="POST" enctype="multipart/form-data" class="kid-signup">
+        <form action = "{% url 'kidreg' %}" method="POST" enctype="multipart/form-data" class="kid-signup">
             {% csrf_token %}
             <!--Child Personal Information-->
             <h4>Child Personal Information</h4>
@@ -129,24 +129,8 @@
         
             <div class="form-buttons">
                 <button type="reset" class="register-another">Register Another Child</button>
-                <a href="{% url 'review_page_name' %}" class="review-inputs">Review Inputs</a>
+                
             </div>
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </form>
 
 

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Travelkit</title>
+    <link rel="stylesheet" >
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Center align items */
+            background-color: #F0F4F8; /* Optional background color */
+            font-family: Arial, sans-serif; /* Font family */
+        }
+
+        .h1{
+            color:  #199A8E;
+        }
+
+        .travel-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            
+            max-width: 800px;
+            width: 100%;
+            margin: 50px;
+        }
+
+        .travel-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around; /* Space out the images */
+            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+            max-width: auto; /* Limit width of image container */
+            margin-bottom: 50px;
+        }
+
+        .image-item {
+            display: flex;
+            flex-direction: column; /* Stack image and checkbox */
+            align-items: center; /* Center align image and checkbox */
+            width: 48%; /* Two items per row */
+            margin-bottom: 10px; /* Space between rows */
+        }
+
+        img {
+            max-width: 48%; /* Responsive images */
+            height: auto; /* Maintain aspect ratio */
+            /* border-radius: 10px; Optional: rounded corners */
+            margin: 10px; /* Space between images */
+            /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #199A8E; /* Button color */
+            color: #fff; /* Text color */
+            border: none; /* Remove border */
+            padding: 15px 30px; /* Padding */
+            border-radius: 50px; /* Rounded edges */
+            font-size: 1.1rem; /* Font size */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Transition effect */
+        }
+
+        button:hover {
+            background-color: #6d4d55; /* Hover color */
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: column; /* Stack images on small screens */
+                align-items: center; /* Center images */
+            }
+            img {
+                width: 100%; /* Make images full-width on smaller screens */
+                margin: 10px 0; /* Space between images */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="travel-container">
+        <div class="travel-header">
+            <h1 class="h1">New Destination Loading...</h1>
+            <p>Which family members are going on the trip?</p>
+        </div>
+
+        <div class="image-container">
+            <div class="image-item">
+                <img src="{% static 'woman.png' %}" alt="woman">
+                <input type="checkbox" name="family_member" value="woman"> 
+            </div>
+            <div class="image-item">
+                <img src="{% static 'boy2.png' %}" alt="boy 2">
+                <input type="checkbox" name="family_member" value="boy2"> 
+            </div>
+            <div class="image-item">
+                <img src="{% static 'momchild.png' %}" alt="mom and child">
+                <input type="checkbox" name="family_member" value="momchild"> 
+            </div>
+            <div class="image-item">
+                <img src="{% static 'boy.png' %}" alt="boy">
+                <input type="checkbox" name="family_member" value="boy"> 
+            </div>
+        </div>
+        <div class="button-container">
+            <button>Next Step</button>
+        </div>
+    
+</body>
+</html>

@@ -6,10 +6,12 @@ from .forms import kidregform
 def homepage(request):
     return render(request, 'index.html')
 
-
 def kidregpage(request):
     form = kidregform()
     return render(request, 'kid_registration.html', {'form': form})
 
 def travelpack(request):
     return render(request, 'travelkit1.html')
+
+def dashpage(request):
+    return render(request, 'dashboard.html')

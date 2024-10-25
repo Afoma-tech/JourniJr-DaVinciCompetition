@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Kid_reg
 
-# Register your models here.
+admin.site.register(Kid_reg)

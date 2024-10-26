@@ -11,24 +11,25 @@
 <body>
     <div class="reg-container">
         <div class="reg-header">
-            <h3>Welcome to Journi Jr.</h3>
-            <p>Register your child to get them the best healthcare during family trips</p>
+            <h3>Welcome to Journi</h3>
+            <p>Fill this optional for the best healthcare during family trips</p>
+            
         </div>
         <form action = "{% url 'kidreg' %}" method="POST" enctype="multipart/form-data" class="kid-signup">
             {% csrf_token %}
             <!--Child Personal Information-->
-            <h4>Child Personal Information</h4>
+            <h4>Personal Information</h4>
             <div class="reg">
                 <p>Government First Name</p>
-                <input type="text" name="first_name" id="c_first_name" placeholder="Enter your child's legal first name">
+                <input type="text" name="gov_fname" id="c_first_name" placeholder="Enter your legal first name">
             </div>
             <div class="reg">
                 <p>Government Last Name</p>
-                <input type="text" name="last_name" id="c_last_name" placeholder="Enter your child's legal last name">
+                <input type="text" name="gov_lname" id="c_last_name" placeholder="Enter your legal last name">
             </div>
             <div class="reg">
                 <p>Date of Birth</p>
-                <input type="date" name="birthday" id="c_birthday" placeholder="Enter your child's date of birth">
+                <input type="date" name="date_of_birth" id="c_birthday" placeholder="Enter your date of birth">
             </div>
             <div class="reg">
                 <p>Sex</p>
@@ -36,38 +37,37 @@
             </div>
             <div class="reg">
                 <p>Street Address</p>
-                <input type="text" name="street_address" id="c_street_address" placeholder="Enter your child's street address" required>
+                <input type="text" name="street_address" id="c_street_address" placeholder="Enter your street address" required>
             </div>
             <div class="reg">
                 <p>City</p>
-                <input type="text" name="city" id="c_city" placeholder="Enter your child's city" required>
+                <input type="text" name="city" id="c_city" placeholder="Enter your city" required>
             </div>
             <div class="reg">
                 <p>State</p>
-                <input type="text" name="state" id="c_state" placeholder="Enter your child's state" required>
+                <input type="text" name="state" id="c_state" placeholder="Enter yourstate" required>
             </div>
             <div class="reg">
                 <p>Zip Code</p>
-                <input type="text" name="zip_code" id="c_zip_code" placeholder="Enter your child's zip code" required>
+                <input type="text" name="zip_code" id="c_zip_code" placeholder="Enter your zip code" required>
             </div>
             <div class="reg">
                 <p>Country</p>
                 {{ form.country }}
             </div>
             <!-- Guardian Information-->
-            <h4>Guardian Personal Information</h4>
-            <p>Note: The Guardian will also be registered as their emergency contact</p>
+            <h4>Emergency Contact</h4>
             <div class="reg">
-                <p>Guardian's Full Name</p>
-                <input type="text" name="full_name" id="g_full_name" placeholder="Enter the name of their legal guardian">
+                <p>Emergency Contact's Full Name</p>
+                <input type="text" name="emergency_contact_fullname" id="g_full_name" placeholder="Enter the name of your emergency contact">
             </div>
             <div class="reg">
-                <p>Guardian's email address</p>
-                <input type="text" name="email_address" id="g_email_address" placeholder="Enter their legal guardian's email address">
+                <p>Emergency Contact's email address</p>
+                <input type="text" name="emergency_contact_email_address" id="g_email_address" placeholder="Enter your legal contact's email address">
             </div>
             <div class="reg">
-                <p>Guardian's Phone number</p>
-                <input type="text" name="phone_number" id="g_phone_number" placeholder="Enter their legal guardian's phone number">
+                <p>Emergency Contact's Phone number</p>
+                <input type="text" name="emergency_contact_phone_number" id="g_phone_number" placeholder="Enter your legal contact's phone number">
             </div>
             <!--Insurance Information-->
             <h4>Insurance Information</h4>
@@ -81,7 +81,7 @@
             </div>
             <div class="reg">
                 <p>Insurance Group Number (if applicable)</p>
-                <input type="text" name="insurance_group_number" id="insurance_group_number" placeholder="Enter the insurance group number">
+                <input type="text" name="group_number" id="insurance_group_number" placeholder="Enter the insurance group number">
             </div>
             <!--Medical Information-->
             <h4>Medical Information</h4>
@@ -92,6 +92,10 @@
             <div class="reg">
                 <p>Doctor's Phone Number</p>
                 <input type="text" name="doctor_phone_number" id="doctor_phone_number" placeholder="Enter the doctor's phone number">
+            </div>
+            <div class="reg">
+                <p>Doctor's Hospital Address</p>
+                <input type="text" name="doctor_hospital_address" id="doctor_hospital_address" placeholder="Enter the doctor's hospital address">
             </div>
             <div class="reg">
                 <p>Current Medication</p>
@@ -110,27 +114,29 @@
                 {{ form.family_medical_history }}
             </div>
             <div class="reg">
-                <p>Guardian Identification Type</p>
+                <p>Identification Type</p>
                 {{ form.guardian_identification_type }}
             </div>
-            <div class="reg">
+            <!--<div class="reg">
                 <p>Child Identification Type</p>
                 {{ form.child_identification_type }}
-            </div>
+            </div> -->
             <div class="reg">
-                <p>Guardian Identification Document (Images or PDFs)</p>
+                <p>Identification Document (Images or PDFs)</p>
                 <input type="file" name="guardian_identification_document" id="guardian_id_document" accept="image/*,.pdf">
             </div>
         
-            <div class="reg">
+            <!--<div class="reg">
                 <p>Child Identification Document (Images or PDFs)</p>
                 <input type="file" name="child_identification_document" id="child_id_document" accept="image/*,.pdf">
-            </div>
+            </div> -->
         
             <div class="form-buttons">
-                <button type="reset" class="register-another">Submit</button>
+                <button type="submit" class="register-another">Submit</button>
                 
             </div>
+            
+           
         </form>
 
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,12 +76,21 @@
             text-align: center;
         }
 
-        h1, h2, h3 {
+        h1, h3 {
             color: var(--green);
         }
 
         h4 {
             color: var(--green);
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h5 {
+            font-size: 24px;
+            color: var(--green)
         }
 
         /* Key Features */
@@ -200,15 +210,16 @@
                     <li><a href="#features">Features</a></li>
                     <li><a href="#faqs">FAQs</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#login">Log In</a></li>
-                    <li><a href="#signup">Sign Up</a></li>
+                    <li><a href="{% url 'loginpage' %}">Log In</a></li>
+                    <li><a href="{% url 'loginpage' %}">Sign Up</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section id="intro" class="container">
-        <h2>Welcome to Journi Jr.</h2>
+        <h2>73% of families believe travel strengthens their bonds</h2>
+        <h5>and JourniJr agrees!</h5>
         <section class="intro-image">
             <img src="../static/familytravel.png"
                 alt="Family Traveling"

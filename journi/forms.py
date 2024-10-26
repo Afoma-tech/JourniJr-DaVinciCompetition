@@ -81,26 +81,12 @@ class kidregform(forms.ModelForm):
         label = "Guardian Identification Type",
     )
 
-    CHILD_IDENTIFICATION_CHOICES = [
-        ('birth_certificate', 'Birth Certificate'),
-        ('passport', 'Passport'),
-        ('other', 'Other'),
-    ]
-
-    child_identification_type = forms.ChoiceField(
-        choices=CHILD_IDENTIFICATION_CHOICES,
-        # widget=forms.CheckboxSelectMultiple,
-        label= "Child Identification Type",
-    )
-
     class Meta:
         model = Kid_reg
         fields = "__all__"  # This includes all fields in the model
         labels = {
             'gov_fname': 'Government First Name',
             'gov_lname': 'Government Last Name',
-            'guardian_email_address': 'Guardian Email Address',
-            'guardian_phone_number': 'Guardian Phone Number',
             'date_of_birth': 'Date of Birth',
             'sex': 'Sex',
             'street_address': 'Street Address',
@@ -109,16 +95,18 @@ class kidregform(forms.ModelForm):
             'zip_code': 'Zip Code',
             'country': 'Country',
             'emergency_contact_fullname': 'Emergency Contact Full Name',
+            'emergency_contact_email_address': 'Emergency Contact Email Address',
             'emergency_contact_phone_number': 'Emergency Contact Phone Number',
             'insurance_provider': 'Insurance Provider',
             'insurance_policy_number': 'Insurance Policy Number',
+            'group_number': 'Group Number',
             'primary_care_doctor': 'Primary Care Doctor',
             'doctor_phone_number': 'Doctor Phone Number',
+            'doctor_hospital_address': 'Doctor Hospital Address',
             'current_medication': 'Current Medication',
             'allergy': 'Allergies',
             'medical_conditions': 'Medical Conditions',
             'family_medical_history': 'Family Medical History',
             'guardian_identification_type': 'Guardian Identification Type',
-            'chid_identification_type': 'Child Identification Type',
-            'identification_document': 'Identification Document',
+            'guardian_identification_document': 'Identification Document',
         }

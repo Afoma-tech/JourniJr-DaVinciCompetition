@@ -18,8 +18,10 @@
         <div class="search-bar">
             <input type="text" id="search" placeholder="Describe your medical needs to the AI assistant">
         </div>
+        <div class="register-container">
+            <a href="{% url 'kidreg' %}" class="register-btn">Register Medical History</a>
+        </div>
     </header>
-    
 
     <main>
         <section class="results">
@@ -64,6 +66,6 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../static/doctor.js"></script>
+    <script src="{% static 'doctor.js' %}"></script>
 </body>
 </html>

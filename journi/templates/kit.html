@@ -199,7 +199,7 @@
             <p>{{ kit.sightseeing }}</p>
 
             <div class="button-container">
-                <button onclick="window.location.href='{% url 'dashpage' %}'">Go Back</button> <!-- Adjust the URL to your actual dashboard URL -->
+                <button data-url="{% url 'dashpage' %}" onclick="window.location.href=this.getAttribute('data-url')">Go Back</button>
             </div>
         
             

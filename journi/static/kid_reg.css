@@ -19,6 +19,7 @@
     padding: 40px;
     border-radius: 15px;
     /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 100px var(--green);
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
@@ -27,16 +28,17 @@
   .reg-header {
     text-align: center;
     margin-bottom: 30px;
+    color: #12a088;
   }
   
   .reg-header h3 {
     font-size: 2.5rem;
-    color: #333;
+    color: #12a088;
   }
   
   .reg-header p {
     font-size: 1.2rem;
-    color: #555;
+    color: #12a088;
   }
   
   form.kid-signup {
@@ -92,7 +94,7 @@
   }
   
   button {
-    background-color: #7e5a63;
+    background-color: #12a088;
     color: #fff;
     border: none;
     padding: 15px 30px;

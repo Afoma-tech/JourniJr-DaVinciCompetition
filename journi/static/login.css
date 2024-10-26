@@ -87,6 +87,7 @@ body {
     box-shadow: 0 5px 10px var(--shadow);
     cursor: pointer;
     transition: .2s;
+    text-decoration: none;
 }
 .btn-1 {
     background: var(--green);

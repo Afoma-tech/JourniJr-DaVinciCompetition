@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +8,13 @@
     <!-- BOXICONS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- STYLE -->
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 <body>
     <div class="form-container">
         <div class="col col-1">
             <div class="image-layer">
-                <img src="img/auth.png" class="form-image-main">
+                <img src="{% static 'auth.png' %}" class="form-image-main">
             </div>
         </div>
 
@@ -41,11 +42,9 @@
                     <div class="forgot-pass">
                         <a href="#">Forgot Password?</a>
                     </div>
-                    <div class="input-box">
-                        <button class="input-submit">
-                            <span>Sign In</span>
-                            <i class="bx bx-right-arrow-alt"></i>
-                        </button>
+                    <div class="btn-box">
+                        <a href="{% url 'kidreg' %}" class="btn btn-1">Sign In</a>  <!-- Update to anchor tag -->
+                        <button class="btn btn-2" id="register">Sign Up</button>
                     </div>
                 </div>
                 <div class="social-login">
@@ -78,11 +77,12 @@
                         <label for="terms-checkbox">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
                     </div>
                     <div class="input-box">
-                        <button class="input-submit">
+                        <a href="{% url 'kidreg' %}" class="input-submit">  <!-- Update to anchor tag -->
                             <span>Sign Up</span>
                             <i class="bx bx-right-arrow-alt"></i>
-                        </button>
+                        </a>
                     </div>
+                    
                 </div>
                 <div class="social-login">
                     <i class="bx bxl-google"></i>
@@ -93,6 +93,6 @@
         </div>
     </div>
 
-    <script src="js/login.js"></script>
+    <script src="{% static 'login.js' %}"></script>
 </body>
 </html>

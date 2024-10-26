@@ -65,20 +65,42 @@ header {
     padding-bottom: 10px;
 }
 
+.register-btn {
+    position: absolute;
+    right: 3%;
+    top: 35%;
+    background-color: var(--mid-green);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s;
+    transition: color .3s;
+}
+
+.register-btn:hover {
+    background-color: var(--light-green);
+    color: #000;
+}
+
 /* ====== Body ====== */
 main {
     display: flex;
+    height: 78vh; /* Ensures both map and results have a consistent height */
 }
 
 .results {
     width: 40%;
     padding: 20px;
-    overflow-y: auto;
+    height: 100%; /* Matches the height of the #map */
+    overflow-y: auto; /* Enables scrolling within the results section */
 }
 
 #map {
     width: 60%;
-    height: 78vh;
+    height: 100%;
 }
 
 /* ====== Doctor Results ====== */
@@ -86,7 +108,6 @@ main {
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid --light-text;
     border-radius: 8px;
     margin: 10px 0;
     background-color: #fff;
@@ -111,6 +132,10 @@ main {
     display: flex;
     align-items: center;
     margin: 0;
+}
+
+.doctor-info .specialization {
+    color: var(--dark-text);
 }
 
 .specialization, .language, .distance {

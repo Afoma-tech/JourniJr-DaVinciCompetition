@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Support Nearby</title>
-    <link rel="stylesheet" href="../static/doctor.css">
+    <link rel="stylesheet" href="{% static 'doctor.css' %}">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -17,14 +18,16 @@
         <div class="search-bar">
             <input type="text" id="search" placeholder="Describe your medical needs to the AI assistant">
         </div>
+        <div class="register-container">
+            <a href="{% url 'kidreg' %}" class="register-btn">Register Medical History</a>
+        </div>
     </header>
-    
 
     <main>
         <section class="results">
             <!-- Doctor List -->
             <div class="doctor-card" data-id="1">
-                <img src="../static/doctor1.jpg" alt="Dr. Ishfaq M." class="doctor-image">
+                <img src="{% static 'doctor1.jpg' %}" alt="Dr. Ishfaq M." class="doctor-image">
                 <div class="doctor-info">
                     <h2>Dr. Ishfaq M.</h2>
                     <p class="specialization">Family Physician</p>
@@ -41,7 +44,7 @@
             </div>
         
             <div class="doctor-card" data-id="2">
-                <img src="../static/doctor2.jpg" alt="Dr. Brian L." class="doctor-image">
+                <img src="{% static 'doctor2.jpg' %}" alt="Dr. Brian L." class="doctor-image">
                 <div class="doctor-info">
                     <h2>Dr. Brian L.</h2>
                     <p class="specialization">Dermatologist</p>
@@ -55,14 +58,65 @@
                     <button class="appointment-btn">Online Chat</button>
                 </div>
             </div>
+
+            <div class="doctor-card" data-id="3">
+                <img src="{% static 'doctor3.jpg' %}" alt="Dr. Edmond S." class="doctor-image">
+                <div class="doctor-info">
+                    <h2>Dr. Edmond S.</h2>
+                    <p class="specialization">Pediatrician</p>
+                    <p class="language">Swedish</p>
+                    <p class="language">English</p>
+                    <p class="language">Japanese</p>
+                    <p class="distance">4.1 km from you</p>
+                </div>
+                <div class="appointment-section">
+                    <p class="price">From <strong>$48</strong> per visit</p>
+                    <button class="appointment-btn">Book Appointment</button>
+                    <button class="appointment-btn">Request Videocall</button>
+                    <button class="appointment-btn">Online Chat</button>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-id="4">
+                <img src="{% static 'doctor4.jpg' %}" alt="Dr. Edmond S." class="doctor-image">
+                <div class="doctor-info">
+                    <h2>Dr. Steve H.</h2>
+                    <p class="specialization">Dentist</p>
+                    <p class="language">Swedish</p>
+                    <p class="language">Korean</p>
+                    <p class="distance">6.6 km from you</p>
+                </div>
+                <div class="appointment-section">
+                    <p class="price">From <strong>$43</strong> per visit</p>
+                    <button class="appointment-btn">Book Appointment</button>
+                    <button class="appointment-btn">Request Videocall</button>
+                    <button class="appointment-btn">Online Chat</button>
+                </div>
+            </div>
+
+            <div class="doctor-card" data-id="5">
+                <img src="{% static 'doctor5.jpg' %}" alt="Dr. Edmond S." class="doctor-image">
+                <div class="doctor-info">
+                    <h2>Dr. Sarah L.</h2>
+                    <p class="specialization">Eye Doctor</p>
+                    <p class="language">Swedish</p>
+                    <p class="language">Portuguese</p>
+                    <p class="distance">2.0 km from you</p>
+                </div>
+                <div class="appointment-section">
+                    <p class="price">From <strong>$53</strong> per visit</p>
+                    <button class="appointment-btn">Book Appointment</button>
+                    <button class="appointment-btn">Request Videocall</button>
+                    <button class="appointment-btn">Online Chat</button>
+                </div>
+            </div>
         </section>
-        
 
         <section id="map"></section>
     </main>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../static/doctor.js"></script>
+    <script src="{% static 'doctor.js' %}"></script>
 </body>
 </html>

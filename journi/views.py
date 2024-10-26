@@ -10,8 +10,22 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 def homepage(request):
     return render(request, 'index.html')
 
+# def kidregpage(request):
+#    form = kidregform()
+#    return render(request, 'kid_registration.html', {'form': form})
+
 def kidregpage(request):
     form = kidregform()
+    if request.method == 'POST':
+        form = kidregform(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('dashpage')
+        else:
+            # Print form errors to the console if validation fails
+            print("Form errors:", form.errors)
+
     return render(request, 'kid_registration.html', {'form': form})
 
 def travelpack(request):
@@ -150,3 +164,7 @@ def chat_with_bot(request):
         else:
             return JsonResponse({'response': "No message received."})
     return HttpResponseBadRequest("Invalid request.")
+
+
+def doctor_view(request):
+    return render(request, 'doctor.html')

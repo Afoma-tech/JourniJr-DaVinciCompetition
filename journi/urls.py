@@ -7,4 +7,5 @@ urlpatterns = [
     path("travelkit/", views.travelpack, name='travelpack'),
     path("dashboard/", views.dashpage, name='dashpage'),
     path('login/', views.loginpage, name='loginpage'),
+    path('doctor/', views.doctor_view, name='doctor'),
 ]

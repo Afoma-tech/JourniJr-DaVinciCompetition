@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Support Nearby</title>
-    <link rel="stylesheet" href="../static/doctor.css">
+    <link rel="stylesheet" href="{% static 'doctor.css' %}">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -24,7 +25,7 @@
         <section class="results">
             <!-- Doctor List -->
             <div class="doctor-card" data-id="1">
-                <img src="../static/doctor1.jpg" alt="Dr. Ishfaq M." class="doctor-image">
+                <img src="{% static 'doctor1.jpg' %}" alt="Dr. Ishfaq M." class="doctor-image">
                 <div class="doctor-info">
                     <h2>Dr. Ishfaq M.</h2>
                     <p class="specialization">Family Physician</p>
@@ -41,7 +42,7 @@
             </div>
         
             <div class="doctor-card" data-id="2">
-                <img src="../static/doctor2.jpg" alt="Dr. Brian L." class="doctor-image">
+                <img src="{% static 'doctor2.jpg' %}" alt="Dr. Brian L." class="doctor-image">
                 <div class="doctor-info">
                     <h2>Dr. Brian L.</h2>
                     <p class="specialization">Dermatologist</p>

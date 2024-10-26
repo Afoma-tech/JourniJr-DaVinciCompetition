@@ -6,87 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Travelkit</title>
-    <link rel="stylesheet" >
+    <link rel="stylesheet">
     <style>
         body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center; /* Center align items */
-            background-color: #F0F4F8; /* Optional background color */
-            font-family: Arial, sans-serif; /* Font family */
+            align-items: center;
+            background-color: #F0F4F8;
+            font-family: Arial, sans-serif;
         }
 
-        .h1{
-            color:  #199A8E;
+        .h1 {
+            color: #199A8E;
         }
 
         .travel-container {
             background-color: #fff;
             padding: 40px;
             border-radius: 15px;
-            
             max-width: 800px;
             width: 100%;
             margin: 50px;
         }
 
-        .travel-header {
+        .travel-header, .section-header {
             text-align: center;
             margin-bottom: 20px;
         }
 
         .image-container {
             display: flex;
-            justify-content: space-around; /* Space out the images */
-            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
-            max-width: auto; /* Limit width of image container */
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: auto;
             margin-bottom: 50px;
         }
 
         .image-item {
             display: flex;
-            flex-direction: column; /* Stack image and checkbox */
-            align-items: center; /* Center align image and checkbox */
-            width: 48%; /* Two items per row */
-            margin-bottom: 10px; /* Space between rows */
+            flex-direction: column;
+            align-items: center;
+            width: 48%;
+            margin-bottom: 10px;
         }
 
         img {
-            max-width: 48%; /* Responsive images */
-            height: auto; /* Maintain aspect ratio */
-            /* border-radius: 10px; Optional: rounded corners */
-            margin: 10px; /* Space between images */
-            /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            max-width: 48%;
+            height: auto;
+            margin: 10px;
         }
 
         .button-container {
             text-align: center;
+            margin-top: 20px;
         }
 
         button {
-            background-color: #199A8E; /* Button color */
-            color: #fff; /* Text color */
-            border: none; /* Remove border */
-            padding: 15px 30px; /* Padding */
-            border-radius: 50px; /* Rounded edges */
-            font-size: 1.1rem; /* Font size */
-            cursor: pointer; /* Pointer cursor */
-            transition: background-color 0.3s ease; /* Transition effect */
+            background-color: #199A8E;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #6d4d55; /* Hover color */
+            background-color: #6d4d55;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #199A8E;
+            margin-bottom: 5px;
+        }
+
+        input[type="date"], select {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
         }
 
         @media (max-width: 768px) {
             .image-container {
-                flex-direction: column; /* Stack images on small screens */
-                align-items: center; /* Center images */
+                flex-direction: column;
+                align-items: center;
             }
             img {
-                width: 100%; /* Make images full-width on smaller screens */
-                margin: 10px 0; /* Space between images */
+                width: 100%;
+                margin: 10px 0;
             }
         }
     </style>
@@ -116,9 +135,34 @@
                 <input type="checkbox" name="family_member" value="boy"> 
             </div>
         </div>
-        <div class="button-container">
-            <button>Next Step</button>
+
+        <!-- New Module: Where are you going? -->
+        <div class="form-group">
+            <label for="country">Where are you going?</label>
+            <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="france">France</option>
+                <option value="australia">Australia</option>
+                <!-- Add more options as needed -->
+            </select>
         </div>
-    
+
+        <!-- New Module: How long are you going? -->
+        <div class="form-group">
+            <label>How long are you going?</label>
+            <label for="start_date">Start Date</label>
+            <input type="date" id="start_date" name="start_date">
+            
+            <label for="end_date">End Date</label>
+            <input type="date" id="end_date" name="end_date">
+        </div>
+
+        <div class="button-container">
+            <button><a href="{% url 'generate_packaging_kit' %}" class="review-inputs">Generate Report</a></button>
+        </div>
+    </div>    
 </body>
 </html>

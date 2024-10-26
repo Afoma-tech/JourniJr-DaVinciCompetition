@@ -1,52 +1,268 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated Packaging Kit</title>
+    <title>Your Packaging Kit</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}"> <!-- External stylesheet for additional styling -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f7f9fc;
-            padding: 40px;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            background-color: #199A8E;
+            color: #fff;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+        .menu li {
+            margin-bottom: 15px;
             text-align: center;
+        }
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .menu li a:hover {
+            color: #f0f4f8;
+        }
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            position: relative; /* For positioning chatbot */
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header-content h1 {
+            color: #4b6584;
+            font-size: 2em;
+            margin: 0;
         }
         .kit-container {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-        h1 {
+        .kit-container h2, .kit-container h3 {
             color: #4b6584;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
-        p {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 30px;
+        .kit-container ul {
+            margin: 10px 0;
+            padding-left: 20px; /* Indent the list */
+            list-style-type: disc; /* Use bullets for lists */
         }
-        button {
+        .kit-container li {
+            margin-bottom: 10px; /* Space between list items */
+        }
+        .button-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .button-container button {
             padding: 10px 20px;
             background-color: #4b6584;
             color: white;
             border: none;
             border-radius: 5px;
+            font-size: 1.1rem;
             cursor: pointer;
         }
-        button:hover {
+        .button-container button:hover {
             background-color: #34495e;
+        }
+
+        /* Chatbot styles */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #4b6584;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Initially hidden */
+        }
+        .chat-header {
+            background-color: #4b6584;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            height: 250px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .chat-input button {
+            padding: 10px;
+            background-color: #4b6584;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-<div class="kit-container">
-    <h1>Your Customized Packaging Kit</h1>
-    <p>{{ kit }}</p>
-    <button onclick="window.location.href='/'">Go Back</button>
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            ☁️ <span style="margin-left: 10px;">Journi</span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Manage Family</a></li>
+                <li><a href="#">Trip History</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header-content">
+            <h1>Your Customized Packaging Kit</h1>
+            <div class="user-info">
+                <span class="user-name">{{ user_name }}</span>
+            </div>
+        </div>
+        <div class="kit-container">
+            <!-- Dynamically generated content -->
+            <h2>Your Packaging Kit</h2>
+            
+            <h3>Packing List</h3>
+            {% for section in kit.packing_list %}
+                <h4>{{ section.name }}</h4>
+                <ul>
+                    {% for item in section.items %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+
+            <h3>Food Recommendations</h3>
+            <p>{{ kit.food_recommendations }}</p>
+
+            <h3>Sightseeing</h3>
+            <p>{{ kit.sightseeing }}</p>
+
+            <div class="button-container">
+                <button onclick="window.location.href='{% url 'dashpage' %}'">Go Back</button> <!-- Adjust the URL to your actual dashboard URL -->
+            </div>
+        </div>
+
+        <!-- Chatbot Interface -->
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">Chat with our Bot</div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="userMessage" placeholder="Type your message here...">
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+
+        <!-- Chatbot Toggle Button -->
+        <button id="toggleChat" style="position: fixed; bottom: 10px; right: 10px; background-color: #4b6584; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Chat</button>
+    </main>
 </div>
 
-</body>
-</html>
+<script>
+    document.getElementById('toggleChat').addEventListener('click', function() {
+        const chatContainer = document.getElementById('chatContainer');
+        chatContainer.style.display = chatContainer.style.display === 'none' || chatContainer.style.display === '' ? 'block' : 'none';
+    });
+
+    document.getElementById('sendMessage').addEventListener('click', function() {
+        const userMessage = document.getElementById('userMessage').value;
+        if (userMessage.trim() === '') return;
+
+        // Display user message
+        appendMessage('You: ' + userMessage);
+        document.getElementById('userMessage').value = ''; // Clear input
+
+        // Send message to the chatbot
+        fetch('{% url "chat_with_bot" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': '{{ csrf_token }}' // Add CSRF token for security
+            },
+            body: new URLSearchParams({
+                'message': userMessage
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.response) {
+                appendMessage('Bot: ' + data.response);
+            } else {
+                appendMessage('Bot: Sorry, I could not respond to that.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            appendMessage('Bot: An error occurred.');
+        });
+    });
+
+    function appendMessage(message) {
+        const chatMessages = document.getElementById('chatMessages');
+        chatMessages.innerHTML += '<div>' + message + '</div>';
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the latest message
+    }
+</script>
+
+</

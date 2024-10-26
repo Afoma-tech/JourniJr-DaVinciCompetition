@@ -1,0 +1,158 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ====== Colors ====== */
+:root {
+    --trans-gray: rgba(200, 200, 200, 0.1);
+    --green: #12a088;
+    --mid-green: #7ecabd;
+    --light-green: #d9f5f0;
+    --shadow: rgba(0, 0, 0, 0.2);
+    --light-text: #A1A8B0;
+    --dark-text: #404246;
+} 
+
+/* ====== BASE ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+/* ====== Header ====== */
+header {
+    background-color: var(--green);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    position: absolute;
+    left: 30px;
+    background: none;
+    border: none;
+    font-size: 2.2em;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    color: var(--light-green);
+}
+
+#search {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.search-bar {
+    padding: 20% 20%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* ====== Body ====== */
+main {
+    display: flex;
+}
+
+.results {
+    width: 40%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#map {
+    width: 60%;
+    height: 78vh;
+}
+
+/* ====== Doctor Results ====== */
+.doctor-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid --light-text;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px var(--shadow);
+}
+
+.doctor-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.doctor-info {
+    flex: 1;
+}
+
+.doctor-info h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--dark-text);
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.specialization, .language, .distance {
+    color: var(--light-text);
+    font-size: 0.9em;
+    margin: 2px 0;
+}
+
+.appointment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 1em;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+}
+
+.appointment-btn {
+    padding: 8px 12px;
+    margin: 3px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--green);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.appointment-btn:hover {
+    background-color: var(--mid-green);
+}
+
+/* .appointment-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ea114b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+} */

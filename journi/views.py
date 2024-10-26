@@ -35,3 +35,6 @@ def loginpage(request):
         return redirect('kid_registration.html')  
 
     return render(request, 'login.html')
+
+def doctorpage(request):
+    return render(request, 'doctor.html')

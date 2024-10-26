@@ -88,17 +88,19 @@ header {
 /* ====== Body ====== */
 main {
     display: flex;
+    height: 78vh; /* Ensures both map and results have a consistent height */
 }
 
 .results {
     width: 40%;
     padding: 20px;
-    overflow-y: auto;
+    height: 100%; /* Matches the height of the #map */
+    overflow-y: auto; /* Enables scrolling within the results section */
 }
 
 #map {
     width: 60%;
-    height: 78vh;
+    height: 100%;
 }
 
 /* ====== Doctor Results ====== */
@@ -106,7 +108,6 @@ main {
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid --light-text;
     border-radius: 8px;
     margin: 10px 0;
     background-color: #fff;
@@ -131,6 +132,10 @@ main {
     display: flex;
     align-items: center;
     margin: 0;
+}
+
+.doctor-info .specialization {
+    color: var(--dark-text);
 }
 
 .specialization, .language, .distance {

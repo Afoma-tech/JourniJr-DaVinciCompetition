@@ -54,7 +54,6 @@
         .main-content {
             flex: 1;
             padding: 40px;
-            position: relative; /* For positioning chatbot */
         }
         .header-content {
             display: flex;
@@ -105,8 +104,8 @@
         .button-container button:hover {
             background-color: #34495e;
         }
-
-        /* Chatbot styles */
+        
+         /* Chatbot styles */
         .chat-container {
             position: fixed;
             bottom: 20px;
@@ -116,7 +115,7 @@
             border-radius: 10px;
             background-color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: none; /* Initially hidden */
+            display: none; 
         }
         .chat-header {
             background-color: #4b6584;
@@ -181,7 +180,7 @@
         </div>
         <div class="kit-container">
             <!-- Dynamically generated content -->
-            <h2>Your Packaging Kit</h2>
+            <h2>{{ kit.title }}</h2>
             
             <h3>Packing List</h3>
             {% for section in kit.packing_list %}
@@ -202,8 +201,9 @@
             <div class="button-container">
                 <button onclick="window.location.href='{% url 'dashpage' %}'">Go Back</button> <!-- Adjust the URL to your actual dashboard URL -->
             </div>
+        
+            
         </div>
-
         <!-- Chatbot Interface -->
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">Chat with our Bot</div>
@@ -229,16 +229,14 @@
         const userMessage = document.getElementById('userMessage').value;
         if (userMessage.trim() === '') return;
 
-        // Display user message
         appendMessage('You: ' + userMessage);
-        document.getElementById('userMessage').value = ''; // Clear input
+        document.getElementById('userMessage').value = '';
 
-        // Send message to the chatbot
         fetch('{% url "chat_with_bot" %}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': '{{ csrf_token }}' // Add CSRF token for security
+                'X-CSRFToken': '{{ csrf_token }}'
             },
             body: new URLSearchParams({
                 'message': userMessage
@@ -261,8 +259,11 @@
     function appendMessage(message) {
         const chatMessages = document.getElementById('chatMessages');
         chatMessages.innerHTML += '<div>' + message + '</div>';
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the latest message
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 </script>
+    </main>
 
-</
+
+</body>
+</html>

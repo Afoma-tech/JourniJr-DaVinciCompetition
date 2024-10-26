@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to eat? | JourniJr</title>
+    <link rel="stylesheet" href="{% static 'food.css' %}">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <button class="back-button" onclick="goBack()">⇦</button>
+            <h1>Where to eat?</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Tell the AI assistant about your preferred cuisine, price, or location">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="results">
+            <!-- Restaurant List -->
+            <div class="restaurant-card" data-id="1">
+                <img src="{% static 'food1.jpg' %}" alt="Stockholms Gästabud" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h2>Stockholms Gästabud</h2>
+                    <p class="cuisine">Traditional Swedish</p>
+                    <p class="rating">4.5 stars</p>
+                    <p class="distance">1.2 km from you</p>
+                </div>
+                <div class="details-section">
+                    <p class="price">$$</p>
+                    <button class="details-btn">View Menu</button>
+                    <button class="details-btn">Website</button>
+                    <button class="details-btn">Get Directions</button>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-id="2">
+                <img src="{% static 'food2.jpg' %}" alt="Lilla Ego" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h2>Lilla Ego</h2>
+                    <p class="cuisine">Italian</p>
+                    <p class="rating">4.1 stars</p>
+                    <p class="distance">3.4 km from you</p>
+                </div>
+                <div class="details-section">
+                    <p class="price">$$$</p>
+                    <button class="details-btn">View Menu</button>
+                    <button class="details-btn">Make Reservation</button>
+                    <button class="details-btn">Get Directions</button>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-id="3">
+                <img src="{% static 'food3.jpg' %}" alt="Auberge Du Pommier" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h2>Auberge Du Pommier</h2>
+                    <p class="cuisine">French</p>
+                    <p class="rating">4.8 stars</p>
+                    <p class="distance">5.7 km from you</p>
+                </div>
+                <div class="details-section">
+                    <p class="price">$$$$</p>
+                    <button class="details-btn">View Menu</button>
+                    <button class="details-btn">Order On Website</button>
+                    <button class="details-btn">Get Directions</button>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-id="4">
+                <img src="{% static 'food4.jpg' %}" alt="Mandarin Restaurant" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h2>Mandarin Restaurant</h2>
+                    <p class="cuisine">Chinese</p>
+                    <p class="rating">4.0 stars</p>
+                    <p class="distance">4.8 km from you</p>
+                </div>
+                <div class="details-section">
+                    <p class="price">$</p>
+                    <button class="details-btn">View Menu</button>
+                    <button class="details-btn">Get Directions</button>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-id="5">
+                <img src="{% static 'food5.jpg' %}" alt="Jacobs & Co. Steakhouse" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h2>Jacobs & Co. Steakhouse</h2>
+                    <p class="cuisine">Steakhouse Cuisine</p>
+                    <p class="rating">3.8 stars</p>
+                    <p class="distance">7.5 km from you</p>
+                </div>
+                <div class="details-section">
+                    <p class="price">$$$$$$</p>
+                    <button class="details-btn">View Menu</button>
+                    <button class="details-btn">Make Reservation</button>
+                    <button class="details-btn">Order On Website</button>
+                    <button class="details-btn">Get Directions</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="map"></section>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{% static 'food.js' %}"></script>
+</body>
+</html>

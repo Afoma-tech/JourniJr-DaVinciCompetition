@@ -40,6 +40,9 @@ def loginpage(request):
 
     return render(request, 'login.html')
 
+def food_view(request):
+    return render(request, 'food.html')
+
 def generate_packaging_kit(request):
     # Example user profile data
     registration_data = {

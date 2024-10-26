@@ -11,6 +11,5 @@ urlpatterns = [
     path('generate-kit/',views.generate_packaging_kit, name='generate_packaging_kit'),
     path('chat/', views.chat_with_bot, name='chat_with_bot'),  # Add this line
     path('doctor/', views.doctor_view, name='doctor'),
-
-
+    path('food/', views.food_view, name='food'),
 ]
